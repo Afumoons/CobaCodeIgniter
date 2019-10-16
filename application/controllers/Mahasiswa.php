@@ -7,6 +7,7 @@ class Mahasiswa extends CI_Controller
         parent::__construct();
         // $this->load->database();
         $this->load->model('Mahasiswa_model');
+        $this->load->library('form_validation');
     }
 
 
@@ -20,5 +21,25 @@ class Mahasiswa extends CI_Controller
         $this->load->view('templates/footer');
     }
     public function tambah()
-    { }
+    {
+        $data['judul'] = 'Form Tambah Data Mahasiswa';
+        // $this->form_validation->set_rules('nama', 'nama yang ditampilkan ketika error', 'aturan1|aturan2|aturan3');
+        $this->form_validation->set_rules('npm', 'NPM', 'required');
+        $this->form_validation->set_rules('nama', 'Nama', 'required');
+        if ($this->form_validation->run() == false) {
+            $this->load->view('templates/header', $data);
+            $this->load->view('mahasiswa/tambah');
+            $this->load->view('templates/footer');
+        } else {
+            $this->Mahasiswa_model->tambahDataMahasiswa();
+            $this->session->set_flashdata('flash', 'Ditambahkan');
+            redirect('mahasiswa');
+        }
+    }
+    public function hapus($id)
+    {
+        $this->Mahasiswa_model->hapusDataMahasiswa($id);
+        $this->session->set_flashdata('flash', 'Dihapus');
+        redirect('mahasiswa');
+    }
 }
