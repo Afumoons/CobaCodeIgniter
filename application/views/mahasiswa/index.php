@@ -20,13 +20,33 @@
         </div>
     </div>
 
+    <div class="row mt-3">
+        <div class="col md-6">
+            <form action="" method="post">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Cari Data Mahasiswa" name="keyword">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-primary" type="submit">Cari
+                        </button></div>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-mt-3">
             <h3>Daftar Mahasiswa</h3>
+            <?php if (empty($mahasiswa)) : ?>
+                <div class="alert alert-danger" role="alert">
+                    <strong>Data Mahasiswa Tidak Ditemukan.</strong>
+                </div>
+            <?php endif; ?>
             <ul class="list-group">
                 <?php foreach ($mahasiswa as $mhs) : ?>
                     <li class="list-group-item"><?= $mhs['NPM']; ?>
                         <a href="<?= base_url(); ?>mahasiswa/hapus/<?= $mhs['NPM']; ?>" class="badge badge-danger float-right" onclick="return confirm('yakin?');">Hapus</a>
+                        <a href="<?= base_url(); ?>mahasiswa/ubah/<?= $mhs['NPM']; ?>" class="badge badge-success float-right">Ubah</a>
+                        <a href="<?= base_url(); ?>mahasiswa/detail/<?= $mhs['NPM']; ?>" class="badge badge-primary float-right">Detail</a>
                     </li>
 
                 <?php endforeach; ?>
