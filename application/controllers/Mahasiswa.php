@@ -6,7 +6,7 @@ class Mahasiswa extends CI_Controller
     {
         parent::__construct();
         // $this->load->database();
-        $this->load->model('Mahasiswa_model');
+        $this->load->model('Mahasiswa_model', 'mahasiswa');
         $this->load->library('form_validation');
         $this->load->model('Jurusan_model');
     }
@@ -16,9 +16,9 @@ class Mahasiswa extends CI_Controller
     {
         // $this->load->database(); //untuk load database di function ini saja (agar semua letakkan di constructor)
         $data['judul'] = 'Daftar Mahasiswa';
-        $data['mahasiswa'] = $this->Mahasiswa_model->getAllMahasiswa();
+        $data['mahasiswa'] = $this->mahasiswa->getAllMahasiswa();
         if ($this->input->post('keyword')) {
-            $data['mahasiswa'] = $this->Mahasiswa_model->cariDataMahasiswa();
+            $data['mahasiswa'] = $this->mahasiswa->cariDataMahasiswa();
         }
         $this->load->view('templates/header', $data);
         $this->load->view('mahasiswa/index', $data);
@@ -36,21 +36,21 @@ class Mahasiswa extends CI_Controller
             $this->load->view('mahasiswa/tambah');
             $this->load->view('templates/footer');
         } else {
-            $this->Mahasiswa_model->tambahDataMahasiswa();
+            $this->mahasiswa->tambahDataMahasiswa();
             $this->session->set_flashdata('flash', 'Ditambahkan');
             redirect('mahasiswa');
         }
     }
     public function hapus($id)
     {
-        $this->Mahasiswa_model->hapusDataMahasiswa($id);
+        $this->mahasiswa->hapusDataMahasiswa($id);
         $this->session->set_flashdata('flash', 'Dihapus');
         redirect('mahasiswa');
     }
     public function detail($id)
     {
         $data['judul'] = 'Detail Data Mahasiswa';
-        $data['mahasiswa'] = $this->Mahasiswa_model->getMahasiswaById($id);
+        $data['mahasiswa'] = $this->mahasiswa->getMahasiswaById($id);
         $this->load->view('templates/header', $data);
         $this->load->view('mahasiswa/detail', $data);
         $this->load->view('templates/footer');
@@ -58,7 +58,7 @@ class Mahasiswa extends CI_Controller
     public function ubah($id)
     {
         $data['judul'] = 'Form Ubah  Data Mahasiswa';
-        $data['mahasiswa'] = $this->Mahasiswa_model->getMahasiswaById($id);
+        $data['mahasiswa'] = $this->mahasiswa->getMahasiswaById($id);
         $data['jurusan'] = $this->Jurusan_model->getAllJurusan();
         // $this->form_validation->set_rules('nama', 'nama yang ditampilkan ketika error', 'aturan1|aturan2|aturan3');
         $this->form_validation->set_rules('npm', 'NPM', 'required');
@@ -69,7 +69,7 @@ class Mahasiswa extends CI_Controller
             $this->load->view('mahasiswa/ubah', $data);
             $this->load->view('templates/footer');
         } else {
-            $this->Mahasiswa_model->ubahDataMahasiswa();
+            $this->mahasiswa->ubahDataMahasiswa();
             $this->session->set_flashdata('flash', 'Diubah');
             redirect('mahasiswa');
         }

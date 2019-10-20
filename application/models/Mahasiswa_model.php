@@ -11,7 +11,7 @@ class Mahasiswa_model extends CI_Model
     public function tambahDataMahasiswa()
     {
         $data = [
-            // "namatabel" => $this->input->post('name', true),
+            // "namakolom" => $this->input->post('name', true),
             "NPM" => $this->input->post('npm', true),
             "nama_mahasiswa" => $this->input->post('nama', true),
             "jurusan_mahasiswa" => $this->input->post('jurusan', true)
