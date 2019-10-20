@@ -2,8 +2,14 @@
 class Peoples_model extends Ci_model
 {
 
-    public function getAllPeoples($limit, $start)
+    public function getPeoples($limit, $start, $keyword = null)
     {
+        if ($keyword) {
+            $this->db->like('people_id', $keyword);
+            $this->db->or_like('people_name', $keyword);
+            $this->db->or_like('people_address', $keyword);
+            $this->db->or_like('people_email', $keyword);
+        }
         return $this->db->get('peoples', $limit, $start)->result_array();
     }
     public function countAllPeoples()
