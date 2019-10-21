@@ -9,10 +9,17 @@ class Auth extends CI_Controller
     }
     public function index()
     {
-        $data['title'] = 'Login Page';
-        $this->load->view('templates/auth_header', $data);
-        $this->load->view('auth/login');
-        $this->load->view('templates/auth_footer');
+        $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+        $this->form_validation->set_rules('password', 'Password', 'trim|required');
+
+        if ($this->form_validation->run() == false) {
+            $data['title'] = 'Login Page';
+            $this->load->view('templates/auth_header', $data);
+            $this->load->view('auth/login');
+            $this->load->view('templates/auth_footer');
+        } else {
+            $this->_login();
+        }
     }
     public function registration()
     {
@@ -34,9 +41,9 @@ class Auth extends CI_Controller
             $this->load->view('templates/auth_footer');
         } else {
             $data = [
-                'username' => $this->input->post('username'),
-                'user_email' => $this->input->post('email'),
-                'user_password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
+                'username' => htmlspecialchars($this->input->post('username', true)),
+                'user_email' => htmlspecialchars($this->input->post('email', true)),
+                'user_password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
                 'is_active' => 1,
                 'role_id' => 2,
                 'user_datecreated' => time(),
@@ -46,5 +53,42 @@ class Auth extends CI_Controller
             $this->session->set_flashdata('message', ' <div class="alert alert-success" role="alert"><strong>Congratulation! you account has been created. Please Login</strong></div>');
             redirect('auth');
         }
+    }
+    private function _login()
+    {
+        $email = $this->input->post('email');
+        $password = $this->input->post('password');
+        $user = $this->db->get_where('user', ['user_email' => $email])->row_array();
+        //usernya ada
+        if ($user) {
+            //Jika usernya aktif
+            if ($user['is_active'] == 1) {
+                // cek password
+                if (password_verify($password, $user['user_password'])) {
+                    $data = [
+                        'email' => $user['user_email'],
+                        'role_id' => $user['role_id']
+                    ];
+                    $this->session->set_userdata($data);
+                    redirect('user');
+                } else {
+                    $this->session->set_flashdata('message', ' <div class="alert alert-danger" role="alert"><strong>Wrong Password</strong></div>');
+                    redirect('auth');
+                }
+            } else {
+                $this->session->set_flashdata('message', ' <div class="alert alert-danger" role="alert"><strong>This email has not been activated</strong></div>');
+                redirect('auth');
+            }
+        } else {
+            $this->session->set_flashdata('message', ' <div class="alert alert-danger" role="alert"><strong>Email is not registered!</strong></div>');
+            redirect('auth');
+        }
+    }
+    public function logout()
+    {
+        $this->session->unset_userdata('email');
+        $this->session->unset_userdata('role_id');
+        $this->session->set_flashdata('message', ' <div class="alert alert-success" role="alert"><strong>You have been logged out!</strong></div>');
+        redirect('auth');
     }
 }
