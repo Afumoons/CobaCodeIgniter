@@ -27,6 +27,9 @@
                                     <button type="submit" class="btn btn-primary btn-user btn-block">
                                         Login
                                     </button>
+                                    <a href="<?= base_url(); ?>" class="btn btn-primary btn-user btn-block">
+                                        Back
+                                    </a>
                                 </form>
                                 <hr>
                                 <div class="text-center">
