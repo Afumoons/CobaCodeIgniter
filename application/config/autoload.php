@@ -90,8 +90,8 @@ $autoload['drivers'] = array();
 |	$autoload['helper'] = array('url', 'file');
 */
 //url buat base_url
-$autoload['helper'] = array('url', 'file', 'security');
-
+$autoload['helper'] = array('url', 'file', 'security', 'afu');
+//afu_helper
 /*
 | -------------------------------------------------------------------
 |  Auto-load Config files

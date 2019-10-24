@@ -5,7 +5,7 @@ class Auth extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->library('form_validation');
+        // $this->load->library('form_validation'); //dimatikan karena sudah autoload
     }
     public function index()
     {
@@ -98,5 +98,16 @@ class Auth extends CI_Controller
         $this->session->unset_userdata('role_id');
         $this->session->set_flashdata('message', ' <div class="alert alert-success" role="alert"><strong>You have been logged out!</strong></div>');
         redirect('auth');
+    }
+    public function blocked()
+    {
+        $data['title'] = 'Access Blocked';
+        $data['user'] = $this->db->get_where('user', ['user_email' => $this->session->userdata('email')])->row_array();
+        $data['menu'] = $this->db->get('user_menu')->result_array();
+        $this->load->view('templates/user_header', $data);
+        $this->load->view('templates/user_sidebar', $data);
+        $this->load->view('templates/user_topbar', $data);
+        $this->load->view('auth/blocked');
+        $this->load->view('templates/user_footer');
     }
 }
