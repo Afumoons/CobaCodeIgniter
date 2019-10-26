@@ -43,7 +43,7 @@
             <a href="<?= base_url(); ?>mahasiswa/tambah" class="btn btn-primary">Tambah Data Mahasiswa</a>
         </div>
     </div>
-    <div class="row" style="">
+    <div class="row">
         <div class="col-sm-8">
             <?php if (empty($mahasiswa)) : ?>
                 <div class="alert alert-danger" role="alert">
