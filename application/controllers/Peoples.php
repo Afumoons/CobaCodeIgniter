@@ -15,7 +15,9 @@ class Peoples extends CI_Controller
     {
         // $this->load->database(); //untuk load database di function ini saja (agar semua letakkan di constructor)
         $data['judul'] = 'List Of Peoples';
-
+        if ($this->session->userdata('username')) {
+            $data['user'] = $this->db->get_where('user', ['user_email' => $this->session->userdata('email')])->row_array();
+        }
         // ambil keyword search
         if ($this->input->post('submit')) {
             $data['keyword'] = $this->input->post('keyword');
@@ -46,6 +48,9 @@ class Peoples extends CI_Controller
     }
     public function add()
     {
+        if ($this->session->userdata('username')) {
+            $data['user'] = $this->db->get_where('user', ['user_email' => $this->session->userdata('email')])->row_array();
+        }
         $data['judul'] = 'Add Peoples Data Form';
         $data['total_rows'] = $this->peoples->countAllPeoples();
         // $this->form_validation->set_rules('nama', 'nama yang ditampilkan ketika error', 'aturan1|aturan2|aturan3');
@@ -71,6 +76,9 @@ class Peoples extends CI_Controller
     }
     public function detail($id)
     {
+        if ($this->session->userdata('username')) {
+            $data['user'] = $this->db->get_where('user', ['user_email' => $this->session->userdata('email')])->row_array();
+        }
         $data['judul'] = 'People Data Detail';
         $data['peoples'] = $this->peoples->getPeopleById($id);
         $this->load->view('templates/header', $data);
@@ -79,6 +87,9 @@ class Peoples extends CI_Controller
     }
     public function edit($id)
     {
+        if ($this->session->userdata('username')) {
+            $data['user'] = $this->db->get_where('user', ['user_email' => $this->session->userdata('email')])->row_array();
+        }
         $data['judul'] = 'Edit Peoples Data Form';
         $data['peoples'] = $this->peoples->getPeopleById($id);
         // $this->form_validation->set_rules('nama', 'nama yang ditampilkan ketika error', 'aturan1|aturan2|aturan3');

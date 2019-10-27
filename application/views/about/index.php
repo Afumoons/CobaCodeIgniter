@@ -1,60 +1,150 @@
-<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="<?= base_url(); ?>assets/img/full/Anime1.jpg" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-            <img src="<?= base_url(); ?>assets/img/full/Anime2.jpg" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-            <img src="<?= base_url(); ?>assets/img/full/Anime3.jpg" class="d-block w-100" alt="...">
-        </div>
-    </div>
-    <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
-</div>
+ <!-- About -->
+ <section class="content-section bg-light" id="about">
+     <div class="container text-center">
+         <div class="row">
+             <div class="col-lg-10 mx-auto">
+                 <h2>This website is the perfect template for your next project!</h2>
+                 <p class="lead mb-5">This website features a flexible, UX friendly sidebar menu and stock photos from our
+                     friends at
+                     <a href="https://unsplash.com/">Unsplash</a>!</p>
+                 <a class="btn btn-dark btn-xl js-scroll-trigger" href="#portofolio">Protofolio</a>
+             </div>
+         </div>
+     </div>
+ </section>
 
-<div id="carouselId" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-        <li data-target="#carouselId" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselId" data-slide-to="1"></li>
-        <li data-target="#carouselId" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner" role="listbox">
-        <div class="carousel-item active">
-            <img src="<?= base_url(); ?>assets/img/full/Anime1.jpg" class="d-block w-100" alt="First slide">
-            <div class="carousel-caption d-none d-md-block">
-                <h3>Title</h3>
-                <p>Description</p>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="<?= base_url(); ?>assets/img/full/Anime2.jpg" class="d-block w-100" alt="Second slide">
-            <div class="carousel-caption d-none d-md-block">
-                <h3>Title</h3>
-                <p>Description</p>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="<?= base_url(); ?>assets/img/full/Anime3.jpg" class="d-block w-100" alt="Third slide">
-            <div class="carousel-caption d-none d-md-block">
-                <h3>Title</h3>
-                <p>Description</p>
-            </div>
-        </div>
-    </div>
-    <a class="carousel-control-prev" href="#carouselId" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselId" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
-</div>
+ <!-- Portfolio -->
+ <section class="content-section" id="portfolio">
+     <div class="container">
+         <div class="content-section-heading text-center">
+             <h3 class="text-secondary mb-0">Portfolio</h3>
+             <h2 class="mb-5">Recent Projects</h2>
+         </div>
+         <div class="row no-gutters">
+             <div class="col-lg-6">
+                 <a class="portfolio-item" href="#">
+                     <span class="caption">
+                         <span class="caption-content">
+                             <h2>Stationary</h2>
+                             <p class="mb-0">A yellow pencil with envelopes on a clean, blue backdrop!</p>
+                         </span>
+                     </span>
+                     <img class="img-fluid" src="<?= base_url('assets/'); ?>img/portfolio-1.jpg" alt="">
+                 </a>
+             </div>
+             <div class="col-lg-6">
+                 <a class="portfolio-item" href="#">
+                     <span class="caption">
+                         <span class="caption-content">
+                             <h2>Ice Cream</h2>
+                             <p class="mb-0">A dark blue background with a colored pencil, a clip, and a tiny ice cream cone!</p>
+                         </span>
+                     </span>
+                     <img class="img-fluid" src="<?= base_url('assets/'); ?>img/portfolio-2.jpg" alt="">
+                 </a>
+             </div>
+             <div class="col-lg-6">
+                 <a class="portfolio-item" href="#">
+                     <span class="caption">
+                         <span class="caption-content">
+                             <h2>Strawberries</h2>
+                             <p class="mb-0">Strawberries are such a tasty snack, especially with a little sugar on top!</p>
+                         </span>
+                     </span>
+                     <img class="img-fluid" src="<?= base_url('assets/'); ?>img/portfolio-3.jpg" alt="">
+                 </a>
+             </div>
+             <div class="col-lg-6">
+                 <a class="portfolio-item" href="#">
+                     <span class="caption">
+                         <span class="caption-content">
+                             <h2>Workspace</h2>
+                             <p class="mb-0">A yellow workspace with some scissors, pencils, and other objects.</p>
+                         </span>
+                     </span>
+                     <img class="img-fluid" src="<?= base_url('assets/'); ?>img/portfolio-4.jpg" alt="">
+                 </a>
+             </div>
+         </div>
+     </div>
+ </section>
+
+ <!-- Call to Action -->
+ <section class="content-section bg-primary text-white">
+     <div class="container text-center">
+         <h2 class="mb-4">The buttons below are impossible to resist...</h2>
+         <a href="#" class="btn btn-xl btn-light mr-4">Click Me!</a>
+         <a href="#" class="btn btn-xl btn-dark">Look at Me!</a>
+     </div>
+ </section>
+
+ <!-- Map -->
+ <!-- <section id="contact" class="map">
+     <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
+     <br />
+     <small>
+         <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
+     </small>
+ </section> -->
+
+
+ <!-- Services -->
+ <!-- <section class="content-section bg-primary text-white text-center" id="services">
+     <div class="container">
+         <div class="content-section-heading">
+             <h3 class="text-secondary mb-0">Services</h3>
+             <h2 class="mb-5">What We Offer</h2>
+         </div>
+         <div class="row">
+             <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                 <span class="service-icon rounded-circle mx-auto mb-3">
+                     <i class="icon-screen-smartphone"></i>
+                 </span>
+                 <h4>
+                     <strong>Responsive</strong>
+                 </h4>
+                 <p class="text-faded mb-0">Looks great on any screen size!</p>
+             </div>
+             <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                 <span class="service-icon rounded-circle mx-auto mb-3">
+                     <i class="icon-pencil"></i>
+                 </span>
+                 <h4>
+                     <strong>Redesigned</strong>
+                 </h4>
+                 <p class="text-faded mb-0">Freshly redesigned for Bootstrap 4.</p>
+             </div>
+             <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+                 <span class="service-icon rounded-circle mx-auto mb-3">
+                     <i class="icon-like"></i>
+                 </span>
+                 <h4>
+                     <strong>Favorited</strong>
+                 </h4>
+                 <p class="text-faded mb-0">Millions of users
+                     <i class="fas fa-heart"></i>
+                     Start Bootstrap!</p>
+             </div>
+             <div class="col-lg-3 col-md-6">
+                 <span class="service-icon rounded-circle mx-auto mb-3">
+                     <i class="icon-mustache"></i>
+                 </span>
+                 <h4>
+                     <strong>Question</strong>
+                 </h4>
+                 <p class="text-faded mb-0">I mustache you a question...</p>
+             </div>
+         </div>
+     </div>
+ </section> -->
+
+ <!-- Callout -->
+ <!-- <section class="callout">
+     <div class="container text-center">
+         <h2 class="mx-auto mb-5">Welcome to
+             <em>your</em>
+             next website!</h2>
+         <a class="btn btn-primary btn-xl" href="https://startbootstrap.com/template-overviews/stylish-portfolio/">Download
+             Now!</a>
+     </div>
+ </section> -->

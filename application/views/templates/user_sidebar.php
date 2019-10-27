@@ -66,6 +66,12 @@
                   <i class="fas fa-fw fa-sign-out-alt"></i>
                   <span>Logout</span></a>
           </li>
+          <!-- Nav Item - Back -->
+          <li class="nav-item">
+              <a class="nav-link" href="<?= base_url(); ?>">
+                  <i class="fas fa-fw fa-backspace"></i>
+                  <span>Back</span></a>
+          </li>
 
           <!-- Divider -->
           <hr class="sidebar-divider d-none d-md-block">
