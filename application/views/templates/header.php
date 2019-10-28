@@ -38,17 +38,19 @@
                     <li class="nav-item">
                         <a class="nav-link" href="<?= base_url(); ?>about">About</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Data</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownId">
-                            <a class="dropdown-item" href="<?= base_url(); ?>mahasiswa">Mahasiswa</a>
-                            <a class="dropdown-item" href="<?= base_url(); ?>peoples">Peoples</a>
-                        </div>
-                    </li>
+                    <?php if ($this->session->userdata('username')) : ?>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Data</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownId">
+                                <a class="dropdown-item" href="<?= base_url(); ?>mahasiswa">Mahasiswa</a>
+                                <a class="dropdown-item" href="<?= base_url(); ?>peoples">Peoples</a>
+                            </div>
+                        </li>
+                    <?php endif; ?>
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <li class="form-inline my-2 my-lg-0">
-                        <form >
+                        <form>
                             <input class="form-control mr-sm-2" type="text" placeholder="Search">
                             <button class="btn btn-outline-success mr-sm-2 my-2 my-sm-0" type="submit">Search</button>
                         </form>
@@ -61,12 +63,12 @@
                     <?php if ($this->session->userdata('username')) : ?>
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown my-2 my-sm-0">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"style="padding-top:0px;padding-bottom:0px;" >
-                            <button class="btn btn-outline-primary mr-2 text-gray-600 small">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding-top:0px;padding-bottom:0px;">
+                                <button class="btn btn-outline-primary mr-2 text-gray-600 small">
                                     <?= $user['username']; ?>
                                 </button>
                             </a>
-                                <!-- <img class="img-profile rounded-circle" src="<?= base_url('assets/img/profile/') . $user['user_image']; ?>" style="width:25px;"> -->
+                            <!-- <img class="img-profile rounded-circle" src="<?= base_url('assets/img/profile/') . $user['user_image']; ?>" style="width:25px;"> -->
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="<?= base_url('user'); ?>">

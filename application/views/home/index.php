@@ -7,13 +7,13 @@
                 <h1 class="mb-5">Website that ready wiht user session built using Bootstrap 4 and CodeIgniter 3.1!</h1>
             </div>
             <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-                <form>
+                <form action="<?= base_url('auth/registration'); ?>" method="get">
                     <div class="form-row">
                         <div class="col-12 col-md-7 mb-2 mb-md-0">
-                            <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
+                            <input type="email" class="form-control form-control-lg" id="emailhome" name="emailhome" placeholder="Enter your email..." value="<?= set_value('username'); ?>">
                         </div>
                         <div class="col-12 col-md-5">
-                            <button type="submit" class="btn btn-block btn-lg btn-primary">Try Sign up Feature!</button>
+                            <button type="submit" class="btn btn-block btn-lg btn-primary">Try Sign up Feature!</b>
                         </div>
                     </div>
                 </form>
@@ -52,7 +52,8 @@
                     <h3>Easy to Use</h3>
                     <p class="lead mb-0">Ready to use with your own content, or customize the source files!</p>
                 </div>
-            </div><div class="col-lg-3">
+            </div>
+            <div class="col-lg-3">
                 <div class="features-icons-item mx-auto mb-0 mb-lg-3">
                     <div class="features-icons-icon d-flex">
                         <i class="icon-like m-auto text-primary"></i>
@@ -132,13 +133,13 @@
                 <h2 class="mb-4">Ready to get started? Sign up now!</h2>
             </div>
             <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-                <form>
+                <form action="<?= base_url('auth/registration'); ?>" method="get">
                     <div class="form-row">
                         <div class="col-12 col-md-9 mb-2 mb-md-0">
-                            <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
+                            <input type="email" class="form-control form-control-lg" id="emailhome" name="emailhome" placeholder="Enter your email..." value="<?= set_value('username'); ?>">
                         </div>
                         <div class="col-12 col-md-3">
-                            <button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button>
+                            <button type="submit" class="btn btn-block btn-lg btn-primary">Sign up !</b>
                         </div>
                     </div>
                 </form>

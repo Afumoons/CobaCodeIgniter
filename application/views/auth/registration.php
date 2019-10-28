@@ -11,11 +11,15 @@
                         </div>
                         <form class="user" method="post" action="<?= base_url('auth/registration'); ?>">
                             <div class="form-group">
-                                <input type="text" class="form-control form-control-user" id="username" name="username" placeholder="Username" value="<?= set_value('username'); ?>"autofocus>
+                                <input type="text" class="form-control form-control-user" id="username" name="username" placeholder="Username" value="<?= set_value('username'); ?>" autofocus>
                                 <?= form_error('username', '<small id="helpId" class="text-danger form-text pl-3">', '</small>'); ?>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control form-control-user" id="email" name="email" placeholder="Email Address" value="<?= set_value('email'); ?>">
+                                <?php if ($emailvalue) : ?>
+                                    <input type="text" class="form-control form-control-user" id="email" name="email" placeholder="Email Address" value="<?= $emailvalue; ?>">
+                                <?php else : ?>
+                                    <input type="text" class="form-control form-control-user" id="email" name="email" placeholder="Email Address" value="<?= set_value('email'); ?>">
+                                <?php endif; ?>
                                 <?= form_error('email', '<small id="helpId" class="text-danger form-text pl-3">', '</small>'); ?>
                             </div>
                             <div class="form-group row">
