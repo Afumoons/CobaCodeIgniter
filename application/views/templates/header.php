@@ -53,17 +53,17 @@
                         <form>
                             <input class="form-control mr-sm-2" type="text" placeholder="Search">
                             <button class="btn btn-outline-success mr-sm-2 my-2 my-sm-0" type="submit">Search</button>
+                            <?php if (!$this->session->userdata('username')) : ?>
+                                <button class="btn btn-outline-info my-2  my-sm-0">
+                                    <a href="<?= base_url(); ?>auth">Login</a>
+                                </button>
+                            <?php endif; ?>
                         </form>
-                        <?php if (!$this->session->userdata('username')) : ?>
-                            <button class="btn btn-outline-info my-2  my-sm-0">
-                                <a href="<?= base_url(); ?>auth">Login</a>
-                            </button>
-                        <?php endif; ?>
                     </li>
                     <?php if ($this->session->userdata('username')) : ?>
                         <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown my-2 my-sm-0">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding-top:0px;padding-bottom:0px;">
+                        <li class="nav-item dropdown no-arrow my-2 my-sm-0">
+                            <a class="nav-link " href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding-top:0px;padding-bottom:0px;">
                                 <button class="btn btn-outline-primary mr-2 text-gray-600 small">
                                     <?= $user['username']; ?>
                                 </button>
