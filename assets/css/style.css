@@ -1,3 +1,156 @@
-.badge {
-	margin-left: 3px;
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
+
+.auth-body {
+  background-color: #486dda;
+}
+
+.form-container {
+  font-family: 'Noto Sans JP', sans-serif;
+  margin: 4em 20vw 7em 20vw;
+  padding: 4em;
+  background: white;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 1.6em;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+      grid-template-areas: "judul" "form" "teks";
+  border-radius: .5em;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.212));
+          filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.212));
+}
+
+.form-container h1.judul {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: judul;
+  text-align: center;
+  color: #505050;
+  font-size: 1.45rem;
+  font-weight: normal;
+}
+
+.form-container .form {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: form;
+}
+
+.form-container .form .input-text {
+  border-radius: 1em;
+  background-color: #e8f0fe;
+  padding: 1em 1em;
+  display: block;
+  width: 100%;
+  border: 1px solid rgba(145, 154, 170, 0.753);
+  border-radius: .3em;
+  margin: 1em 0em;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.form-container .form .input-text:focus {
+  -webkit-filter: drop-shadow(0px 0px 5px #6e7581);
+          filter: drop-shadow(0px 0px 5px #6e7581);
+}
+
+.form-container .form .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.form-container .form .flex a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  width: 100%;
+}
+
+.form-container .form .flex .input-tombol {
+  border-radius: 1em;
+  background-color: #4e73df;
+  padding: 1em 1em;
+  display: inline-block;
+  width: 100%;
+  border: 1px solid rgba(145, 154, 170, 0.753);
+  border-radius: 2em;
+  margin: .5em 0.1em;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  color: whitesmoke;
+  font-weight: normal;
+  font-size: .8rem;
+  text-align: center;
+  letter-spacing: 0.07em;
+}
+
+.form-container .form .flex .input-tombol:hover {
+  background-color: #2d59db;
+}
+
+@media (max-width: 730px) {
+  .form-container .form .flex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.form-container hr {
+  height: 1px;
+  background-color: #8d8d8d57;
+  border: none;
+}
+
+.form-container .form-text a {
+  text-align: center;
+  text-decoration: none;
+  color: #486dda;
+  display: block;
+  font-size: .8rem;
+}
+
+.form-container .form-text a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 730px) {
+  .form-container {
+    margin: 4em 6em 7em 6em;
+    padding: 3em;
+  }
+}
+
+@media (max-width: 420px) {
+  .form-container {
+    margin: 2em 2.5em 5em 2.5em;
+    padding: 1.4em;
+  }
+}
+/*# sourceMappingURL=style.css.map */

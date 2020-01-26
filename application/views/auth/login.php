@@ -1,13 +1,39 @@
-<div class="container">
+<div class="form-container">
+    <h1 class="judul">Login Page</h1>
+    <?= $this->session->flashdata('message'); ?>
+    <form action="<?= base_url('auth'); ?>" method="POST" class="form">
+        <input type="text" class="input-text" id="input" name="input" placeholder="Enter Email Address or Username..." value="<?= set_value('input'); ?>">
+        <?= form_error('input', '<small id="helpId" class="text-danger form-text pl-3">', '</small>'); ?>
 
-    <!-- Outer Row -->
-    <div class="row justify-content-center">
+        <input type="password" class="input-text" id="password" name="password" placeholder="Password">
+        <?= form_error('password', '<small id="helpId" class="text-danger form-text pl-3">', '</small>'); ?>
+        <div class="flex">
+            <a href="<?= base_url(); ?>">
+                <button class="input-tombol tombol-back">
+                    Back
+                </button>
+            </a>
+            <button type="submit" class="input-tombol tombol-login">
+                Login
+            </button>
+        </div>
+    </form>
+    <hr>
+    <div class="form-text">
+        <a class="small" href="<?= base_url('auth/forgotpassword'); ?>">Forgot Password?</a>
+        <a class="small" href="<?= base_url('auth/registration'); ?>">Create an Account!</a>
+    </div>
+</div>
+<!-- <div class="container"> -->
 
-        <div class="col-lg-7">
+<!-- Outer Row -->
+<!-- <div class="row justify-content-center"> -->
 
-            <div class="card o-hidden border-0 shadow-lg my-5">
+<!-- <div class="col-lg-7"> -->
+
+<!-- <div class="card o-hidden border-0 shadow-lg my-5">
                 <div class="card-body p-0">
-                    <!-- Nested Row within Card Body -->
+                    Nested Row within Card Body
                     <div class="row">
                         <div class="col-lg">
                             <div class="p-5">
@@ -48,4 +74,4 @@
 
     </div>
 
-</div>
+</div> -->
