@@ -1,1 +1,12 @@
+// Awal
+@import "variables";
+@import "functions";
+@import "mixins";
+
+// Tengah
 @import "auth";
+@import "user";
+@import "error-anim";
+
+// Bawah
+@import "animations";

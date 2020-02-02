@@ -1,13 +1,19 @@
-// Mixins
-// Background Cover Mixin
-@mixin background-cover {
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+@mixin tablet {
+	@media(max-width:#{$tablet}) {
+		@content;
+	}
 }
 
-// Font Mixins
-@mixin body-font {
-  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+@mixin phone {
+	@media(max-width:#{$phone}) {
+		@content;
+	}
+}
+
+@mixin sidebar-tablet {
+	display: flex;
+	flex-direction: column;
+	// justify-content: center;
+	// align-items: center;
+	width: $sidebar-width-tablet;
 }

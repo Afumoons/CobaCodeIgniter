@@ -1,35 +1,49 @@
-// Variables
+// Default Colors
+$colors: ( // Primary	
+	primary: rgb(123, 72, 218),
+	primary-light: lighten(rgb(123, 72, 218), 10%),
+	primary-lighter: lighten(rgb(123, 72, 218), 20%),
+	primary-lightest: lighten(rgb(123, 72, 218), 30%),
+	primary-dark: darken(rgb(123, 72, 218), 10%),
+	primary-darker: darken(rgb(123, 72, 218), 20%),
+	primary-darkest: darken(rgb(123, 72, 218), 30%),
 
-// Restated Bootstrap Variables
+	// Grey
+	grey:grey,
+	grey-light:lighten(grey, 10%),
+	grey-lighter:lighten(grey, 20%),
+	grey-lightest:lighten(grey, 40%),
+	grey-lightestt:lighten(grey, 70%),
+	grey-dark:darken(grey, 10%),
+	grey-darker:darken(grey, 20%),
+	grey-darkest:darken(grey, 40%),
+	grey-darkestt:darken(grey, 70%),
 
-$white: #fff !default;
-$gray-100: #f8f9fa !default;
-$gray-200: #e9ecef !default;
-$gray-300: #dee2e6 !default;
-$gray-400: #ced4da !default;
-$gray-500: #adb5bd !default;
-$gray-600: #868e96 !default;
-$gray-700: #495057 !default;
-$gray-800: #343a40 !default;
-$gray-900: #212529 !default;
-$black: #000 !default;
+	// Default
+	white:white,
+	black:black,
+);
 
-$blue: #007bff !default;
-$indigo: #6610f2 !default;
-$purple: #6f42c1 !default;
-$pink: #e83e8c !default;
-$red: #dc3545 !default;
-$orange: #fd7e14 !default;
-$yellow: #ffc107 !default;
-$green: #28a745 !default;
-$teal: #20c997 !default;
-$cyan: #17a2b8 !default;
+// Media Breakpoints
+$tablet:750px;
+$phone:550px;
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&display=swap');
 
-$primary: $blue !default;
-$secondary: $gray-600 !default;
-$success: $green !default;
-$info: $cyan !default;
-$warning: $yellow !default;
-$danger: $red !default;
-$light: $gray-100 !default;
-$dark: $gray-800 !default;
+
+// Variable for user
+$sidebar-width-desktop:22%;
+$sidebar-width-tablet:16%;
+$sidebar-width-phone:16%;
+$navbar-width-desktop:100% - $sidebar-width-desktop;
+$navbar-width-tablet:100% - $sidebar-width-tablet;
+$navbar-width-phone:100% - $sidebar-width-phone;
+
+// Transisi
+$transisi1:350ms ease-in-out;
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Noto Sans JP', sans-serif;
+}

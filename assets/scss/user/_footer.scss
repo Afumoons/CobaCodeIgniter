@@ -1,0 +1,35 @@
+footer.footer {
+	margin: 0 0px 0px $sidebar-width-desktop;
+	padding: 1.5em;
+	background-color: color(white);
+	transition: $transisi1;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+
+	p {
+		color: color(grey);
+		font-size: .8rem;
+	}
+
+	&.toggle-tablet {
+		margin-left: $sidebar-width-tablet;
+	}
+
+	@include tablet {
+		margin-left: $sidebar-width-tablet;
+	}
+
+	&.toggle-phone {
+		margin-left: 0;
+	}
+
+	@include phone {
+		margin-left: 0;
+	}
+
+	&.toggle-phone-buka {
+		margin-left: $sidebar-width-tablet;
+	}
+}

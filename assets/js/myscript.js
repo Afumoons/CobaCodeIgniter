@@ -1,3 +1,5 @@
+
+
 const flashData = $('.flash-data').data('flashdata');
 console.log(flashData);
 if (flashData) {
@@ -31,3 +33,5 @@ $('.tombol-hapus').on('click', function (e) {
         }
     })
 });
+// Tombol hapus end
+

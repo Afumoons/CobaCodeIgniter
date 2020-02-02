@@ -1,47 +1,23 @@
-<div class="container">
-
-    <!-- Outer Row -->
-    <div class="row justify-content-center">
-
-        <div class="col-lg-7">
-
-            <div class="card o-hidden border-0 shadow-lg my-5">
-                <div class="card-body p-0">
-                    <!-- Nested Row within Card Body -->
-                    <div class="row">
-                        <div class="col-lg">
-                            <div class="p-5">
-                                <div class="text-center">
-                                    <h1 class="h4 text-gray-900">Change your password for?</h1>
-                                    <h5 class="mb-4"><?= $this->session->userdata('reset_email'); ?></h5>
-                                </div>
-                                <?= $this->session->flashdata('message'); ?>
-                                <form class="user" method="post" action="<?= base_url('auth/changepassword'); ?>">
-                                    <div class="form-group">
-                                        <input type="password" class="form-control form-control-user" id="password1" name="password1" placeholder="Enter New Password...">
-                                        <?= form_error('password1', '<small id="helpId" class="text-danger form-text pl-3">', '</small>'); ?>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" class="form-control form-control-user" id="password2" name="password2" placeholder="Reenter Password...">
-                                        <?= form_error('password2', '<small id="helpId" class="text-danger form-text pl-3">', '</small>'); ?>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary btn-user btn-block">
-                                        Change Password
-                                    </button>
-                                    <a href="<?= base_url(); ?>" class="btn btn-primary btn-user btn-block">
-                                        Back
-                                    </a>
-                                </form>
-                                <hr>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+<div class="form-container">
+    <h1 class="judul">Change your password for?</h1>
+    <h5 class="mb-4"><?= $this->session->userdata('reset_email'); ?></h5>
+    <?= $this->session->flashdata('message'); ?>
+    <form class="form" method="post" action="<?= base_url('auth/changepassword'); ?>">
+        <input type="password" class="input-text" id="password1" name="password1" placeholder="Enter New Password...">
+        <!-- <?= form_error('password1', '<small id="helpId" class="text-danger form-text pl-3">', '</small>'); ?> -->
+        <input type="password" class="input-text" id="password2" name="password2" placeholder="Reenter New Password...">
+        <!-- <?= form_error('password2', '<small id="helpId" class="text-danger form-text pl-3">', '</small>'); ?> -->
+        <div class="flex">
+            <a href="<?= base_url(); ?>">
+                <button class="input-tombol tombol-back">
+                    Back
+                </button>
+            </a>
+            <button type="submit" class="input-tombol tombol-login">
+                Change Password
+            </button>
         </div>
-
-    </div>
+    </form>
+    <hr>
 
 </div>

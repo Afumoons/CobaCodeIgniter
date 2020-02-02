@@ -1,0 +1,28 @@
+main.main {
+	margin: 12vh 0px 0px $sidebar-width-desktop;
+	padding: 1.5em;
+	min-height: 1000px;
+	background-color: color(white);
+	background-image: linear-gradient(color(white), darken(color(grey-lightestt), 5%));
+	transition: $transisi1;
+
+	&.toggle-tablet {
+		margin-left: $sidebar-width-tablet;
+	}
+
+	@include tablet {
+		margin-left: $sidebar-width-tablet;
+	}
+
+	&.toggle-phone {
+		margin-left: 0;
+	}
+
+	@include phone {
+		margin-left: 0;
+	}
+
+	&.toggle-phone-buka {
+		margin-left: $sidebar-width-tablet;
+	}
+}
